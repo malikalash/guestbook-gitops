@@ -10,7 +10,12 @@ spec:
     chart: postgresql
     targetRevision: 18.1.10
     helm:
-      values: |
+      values:
+        volumePermissions:
+          enabled: true
+        primary:
+          containerSecurityContext:
+            readOnlyRootFilesystem: false |
         auth:
           postgresPassword: "guestbook"
           username: "guestbook"
