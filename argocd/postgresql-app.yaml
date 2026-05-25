@@ -39,6 +39,10 @@ spec:
         
         # Create a service with a consistent name
         fullnameOverride: "postgresql"
+        image:
+          registry: docker.io
+          repository: postgres
+          tag: "16-alpine"
 
   destination:
     server: https://kubernetes.default.svc
